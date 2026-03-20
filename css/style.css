@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+#left-pane {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+#right-pane {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: #f7f7f7;
+}
+
+#view-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#view-buttons button {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#view-buttons button:hover {
+  background: #e9e9e9;
+}
+
+#view-buttons button.active {
+  background: #0366d6;
+  color: #fff;
+  border-color: #0366d6;
+}
+
+#drop-zone {
+  margin-top: auto;
+  padding: 32px 16px;
+  border: 2px dashed #aaa;
+  border-radius: 6px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+#drop-zone.drag-over {
+  background: #e8f0fe;
+  border-color: #0366d6;
+  color: #0366d6;
+}
