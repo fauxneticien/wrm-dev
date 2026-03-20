@@ -12,7 +12,7 @@ window.registerView("js/view-glosses.js", function (content, targetDiv) {
       current = { lx: lxMatch[1], glosses: [] };
       continue;
     }
-    var geMatch = lines[i].match(/^\\ge\s+(.*)/);
+    var geMatch = lines[i].match(/^\s*\\ge\s+(.*)/);
     if (geMatch && current) {
       current.glosses.push(geMatch[1]);
     }
@@ -22,9 +22,16 @@ window.registerView("js/view-glosses.js", function (content, targetDiv) {
   var html = "<table><thead><tr><th>lx</th><th>ge</th></tr></thead><tbody>";
   for (var j = 0; j < entries.length; j++) {
     var e = entries[j];
-    var ge = e.glosses.length > 0
-      ? escapeHtml(e.glosses.join(", "))
-      : "\u274C";
+    var ge;
+    if (e.glosses.length > 0) {
+      var joined = e.glosses.join(", ");
+      ge = escapeHtml(joined);
+      if (joined.indexOf("?") !== -1) {
+        ge += " \u26A0\uFE0F";
+      }
+    } else {
+      ge = "\u274C";
+    }
     html += "<tr><td>" + escapeHtml(e.lx) + "</td><td>" + ge + "</td></tr>";
   }
   html += "</tbody></table>";

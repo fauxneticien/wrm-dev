@@ -73,3 +73,23 @@ html, body {
   border-color: #0366d6;
   color: #0366d6;
 }
+
+#left-pane table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#left-pane th,
+#left-pane td {
+  padding: 6px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+#left-pane thead th {
+  border-bottom: 2px solid #ccc;
+}
+
+#left-pane tbody tr:nth-child(even) {
+  background: #f5f5f5;
+}
