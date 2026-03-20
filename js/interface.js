@@ -30,6 +30,13 @@
     leftPane.scrollTop = savedScroll;
   }
 
+  // Dynamically load all view scripts
+  Object.keys(views).forEach(function (name) {
+    var script = document.createElement("script");
+    script.src = views[name];
+    document.head.appendChild(script);
+  });
+
   document.addEventListener("DOMContentLoaded", function () {
     var viewButtons = document.getElementById("view-buttons");
     var dropZone = document.getElementById("drop-zone");
