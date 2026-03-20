@@ -8,7 +8,8 @@
   };
 
   var views = {
-    "Check all items are unique": "js/view-unique.js"
+    "Check all items are unique": "js/view-unique.js",
+    "Glosses": "js/view-glosses.js"
   };
 
   var currentView = null;
