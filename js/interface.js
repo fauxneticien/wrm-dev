@@ -8,7 +8,7 @@
   };
 
   var views = {
-    "Check all items are unique": "js/view-unique.js",
+    "Check lexical entries unique": "js/view-unique.js",
     "Glosses": "js/view-glosses.js"
   };
 
